@@ -21,7 +21,8 @@ app.use('/', index);
 var returnHeader = {
   useragent: "",
   language: "",
-  ip: ""
+  ip: "",
+  question: "Who are you?"
 }
 app.get('/whoami', function(request, response) {
   var newHeader = JSON.stringify(request.headers).split("");
