@@ -1,1 +1,39 @@
-<h1>Hello World</h1>
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request Header Parser</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <h1>Request Header Parser</h1>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <p class="introBlurb">This request header parser will take your request to the server and return to you your
+                useragent, language, and ip address.
+              </p>
+            </div>
+          </div>
+          <p>Enter this URL into your browser bar to see your machine's information:</p>
+          <div class="alert alert-danger">
+            https://matty22requestheaderparser.herokuapp.com/whoami
+          </div>
+          <p>Example output:</p>
+          <div class="alert alert-success">{"useragent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) 
+            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36","language":"enUS,en;q=0.8",
+            "ip":"71.35.101.10"}</div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </body>
