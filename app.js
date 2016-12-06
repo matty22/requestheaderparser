@@ -20,7 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 var returnHeader = {
   useragent: "",
-  language: ""
+  language: "",
+  ip: ""
 }
 app.get('/whoami', function(request, response) {
   var newHeader = JSON.stringify(request.headers).split("");
@@ -31,7 +32,13 @@ app.get('/whoami', function(request, response) {
     }
   }
   var joinedHeader = newHeader.join("");
-  response.send(joinedHeader);
+  var backToObj = JSON.parse(joinedHeader);
+
+  returnHeader.useragent = backToObj.useragent;
+  returnHeader.language = backToObj.acceptlanguage;
+  returnHeader.ip = backToObj.xforwardedfor;
+
+  response.send(returnHeader);
 });
 
 // catch 404 and forward to error handler
