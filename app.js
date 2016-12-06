@@ -22,7 +22,7 @@ var returnHeader = {
   useragent: "",
   language: "",
   ip: "",
-  question: "Who are you?"
+  whoami: "I'm a robot. *beep* *boop*"
 }
 app.get('/whoami', function(request, response) {
   var newHeader = JSON.stringify(request.headers).split("");
