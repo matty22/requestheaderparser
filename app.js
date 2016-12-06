@@ -18,9 +18,20 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+var returnHeader = {
+  useragent: "",
+  language: ""
+}
+app.get('/whoami', function(request, response) {
+  var newHeader = JSON.stringify(request.headers).split("");
 
-app.get('/', function(request, response) {
-  response.send(request.header);
+  for (let i = 0; i < newHeader.length; i++) {
+    if (newHeader[i] == "-") {
+      newHeader[i] = "";
+    }
+  }
+  var joinedHeader = newHeader.join("");
+  response.send(joinedHeader);
 });
 
 // catch 404 and forward to error handler
